@@ -17,9 +17,7 @@ class Database {
         $mysqli = new mysqli($this->dbHost, $this->dbUser, $this->dbPassword, $this->dbName);
 
         // buat kondisi jika koneksi ke database berhasil
-        if ( !$mysqli->connect_error ) {
-            echo "koneksi ke database berhasil";
-        } else { 
+        if ( $mysqli->connect_error ) {
             echo "koneksi ke database gagal [" . $mysqli->connect_error . "]";
         }
 
@@ -31,3 +29,5 @@ class Database {
 // membuat objek database
 // $connectToDb = new Database();
 // $connectToDb->connect()
+
+?>

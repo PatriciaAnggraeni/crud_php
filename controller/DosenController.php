@@ -1,6 +1,6 @@
 <?php
 
-require_once "./database/database.php";
+require_once "../database/database.php";
 
 class DosenController {
 
@@ -21,9 +21,13 @@ class DosenController {
             $data_dosen[] = $data;
         }
 
+        // tutup koneksi ke database
+        $result->close();
+
         // kembalikan nilai dari hasil query yang ditampung di array tadi
         return $data_dosen ?? "Data Dosen Masih Kosong";
 
     }
-
 }
+
+?>
