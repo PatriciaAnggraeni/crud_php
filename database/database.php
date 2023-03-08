@@ -10,14 +10,6 @@ class Database {
     private $dbPassword = "Anggara27042022";
     private $dbName = "crud_php";
 
-    // membuat konstruktor class
-    public function __construct() {
-        
-        // memanggil fungsi connect di dalam konstruktor
-        $this->connect();
-
-    }
-
     // membuat method untuk koneksi ke database
     public function connect() {
 
@@ -37,4 +29,5 @@ class Database {
 }
 
 // membuat objek database
-$connectToDb = new Database();
+// $connectToDb = new Database();
+// $connectToDb->connect()
