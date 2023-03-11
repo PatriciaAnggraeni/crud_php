@@ -106,3 +106,11 @@
     -->
   </body>
 </html>
+
+<!-- buat tag script agar menghilangkan tanda ?alert=nilai di route dan alertnya -->
+<script>
+    function refreshPage() { window.location = "http://localhost/crud_php/views/dosen.php"; }
+
+    if ( performance.navigation.type == performance.navigation.TYPE_RELOAD ) refreshPage();
+
+</script>
