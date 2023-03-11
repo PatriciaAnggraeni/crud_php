@@ -18,7 +18,7 @@
         if ( empty($_GET["home"]) ) {
             require_once "read_data.php";
         } else if ( $_GET["home"] == "add_data" ) {
-            // ke halaman tambah data
+          require_once "add_data.php";
         }
     
     ?>

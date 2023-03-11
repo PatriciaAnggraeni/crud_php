@@ -17,7 +17,7 @@
     <div class="container">
 
         <!-- membuat tombol untuk menambah data dosen -->
-        <a href="#" class="btn btn-success mt-5">Tambah +</a>
+        <a href="add_data.php" class="btn btn-success mt-5">Tambah +</a>
 
         <table class="table mt-2">
             <thead>

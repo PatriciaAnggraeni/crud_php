@@ -28,6 +28,34 @@ class DosenController {
         return $data_dosen ?? "Data Dosen Masih Kosong";
 
     }
+
+    // membuat method untuk menambahkan data dosen
+    public function add_data( $nip, $nama, $pengampu, $tingkatan ) {
+
+        // buat objek database untuk menyambungkan koneksi ke database
+        $db = new Database;
+        
+        // buat variabel penampung dari koneksi database
+        $mysqli = $db->connect();
+
+        // isikan data ke dalam variabel parameter sesuai data
+        $nip = $mysqli->real_escape_string($nip);
+        $nama = $mysqli->real_escape_string($nama);
+        $pengampu = $mysqli->real_escape_string($pengampu);
+        $tingkatan = $mysqli->real_escape_string($tingkatan);
+
+        // buat variabel untuk menam[ung query insert mysql
+        $sql = "INSERT INTO dosen(nip, nama, pengampu, tingkatan) 
+                VALUES ('$nip', '$nama', '$pengampu', '$tingkatan')";
+
+        // eksekusi query mysql di atas
+        $mysqli->query($sql);
+
+        // redirect halaman ke dosen.php agar data dapat langsung ditampilkan
+        header('Location: ../views/dosen.php');
+
+        $mysqli->close();
+    }
 }
 
 ?>
