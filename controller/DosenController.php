@@ -48,11 +48,16 @@ class DosenController {
         $sql = "INSERT INTO dosen(nip, nama, pengampu, tingkatan) 
                 VALUES ('$nip', '$nama', '$pengampu', '$tingkatan')";
 
-        // eksekusi query mysql di atas
-        $mysqli->query($sql);
+        // eksekusi query mysql di atas dan membuat sebuah session
+        $result = $mysqli->query($sql);
 
-        // redirect halaman ke dosen.php agar data dapat langsung ditampilkan
-        header('Location: ../views/dosen.php');
+        if ( $result ) {
+            // redirect halaman ke read_data.php agar data dapat langsung ditampilkan dan menampilkan pesan bahwa data berhasil ditambahkan
+            header('Location: ../views/read_data.php?alert=1');
+        } else {
+            // redirect halaman ke read_data.php agar data dapat langsung ditampilkan dan menampilkan pesan bahwa data gagal ditambahkan
+            header('Location: ../views/read_data.php?alert=2');
+        }
 
         $mysqli->close();
     }

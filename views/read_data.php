@@ -13,11 +13,31 @@
   <body>
     <h1 class="text-center">Data Dosen</h1>
 
-
     <div class="container">
 
         <!-- membuat tombol untuk menambah data dosen -->
-        <a href="add_data.php" class="btn btn-success mt-5">Tambah +</a>
+        <a href="add_data.php" class="btn btn-success mt-5 mb-3">Tambah +</a>
+
+        <!-- buat session untuk mengecek apakah data berhasil ditambahkan -->
+        <?php 
+
+            if ( empty($_GET['alert']) ) {
+                echo "";
+            } else if ( $_GET['alert'] == 1 ) {
+                echo '
+                    <div class="alert alert-primary" role="alert">
+                        <strong>Data Dosen Berhasil Ditambahkan!</stromg>
+                    </div>
+                ';
+            } else if ( $_GET['alert'] == 2 ) {
+                echo '
+                    <div class="alert alert-danger" role="alert">
+                        <strong>Data Dosen Gagal Ditambahkan!</stromg>
+                    </div>
+                ';
+            }   
+
+        ?>
 
         <table class="table mt-2">
             <thead>
