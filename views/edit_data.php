@@ -20,7 +20,6 @@
         $nama = $data->nama ?? '';
         $pengampu = $data->pengampu ?? '';
         $tingkatan = $data->tingkatan ?? '';
-
     }
 
 ?>
@@ -68,7 +67,7 @@
                             <input type="text" class="form-control" id="tingkatan" name="tingkatan" placeholder="Masukkan tingkatan jabatan..." value="<?= $tingkatan ?>">
                         </div>
                         
-                        <button type="submit" name="ubah_data" class="btn btn-primary">Ubah</button>
+                        <button type="submit" name="edit_data" class="btn btn-primary">Ubah</button>
                     </form>
                 </div>
             </div>

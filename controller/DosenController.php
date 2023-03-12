@@ -117,6 +117,30 @@ class DosenController {
 
         $mysqli->close();
     }
+
+    // buat method untuk melakukan hapus data
+    public function delete_data( $id ) {
+
+        // buat objek database baru
+        $db = new Database;
+
+        // buat query myswl untuk mengambil data berdasarkan id
+        $sql = "DELETE FROM dosen WHERE id_dosen = '$id';";
+
+        // tampung hasil di sebuah variabel
+        $result = $db->connect()->query($sql);
+
+        if ( $result ) {
+            // redirect halaman ke read_data.php agar data dapat langsung ditampilkan dan menampilkan pesan bahwa data berhasil ditambahkan
+            header('Location: ../views/read_data.php?alert=4');
+        } else {
+            // redirect halaman ke read_data.php agar data dapat langsung ditampilkan dan menampilkan pesan bahwa data gagal ditambahkan
+            header('Location: ../views/read_data.php?alert=2');
+        }
+
+        // setelah itu, tutup koneksinya
+        $db->connect()->close();
+    }
 }
 
 ?>

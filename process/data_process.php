@@ -18,7 +18,7 @@ if ( isset($_POST['simpan_data']) ) {
     $data_dosen->add_data( $nip, $nama, $pengampu, $tingkatan );
 }
 
-if ( isset($_POST['ubah_data']) ) {
+if ( isset($_POST['edit_data']) ) {
 
     $data_dosen = new DosenController;
 
@@ -32,5 +32,17 @@ if ( isset($_POST['ubah_data']) ) {
     // passing setiap data yan dibutuhkan ke dalam method add_data
     $data_dosen->save_edit_data( $id, $nip, $nama, $pengampu, $tingkatan );
 }
+
+if ( isset($_GET['id']) ) {
+
+    $data_dosen = new DosenController;
+
+    // simpan data ke dalam variabel masing masing
+    $id = trim($_GET['id']);
+
+    // passing setiap data yan dibutuhkan ke dalam method add_data
+    $data_dosen->delete_data( $id );
+}
+
 
 ?>

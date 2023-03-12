@@ -41,6 +41,12 @@
                         <strong>Data Dosen Berhasil Dirubah!</stromg>
                     </div>
                 ';
+            } else if ( $_GET['alert'] == 4 ) {
+                echo '
+                    <div class="alert alert-success" role="alert">
+                        <strong>Data Dosen Berhasil Dihapus!</stromg>
+                    </div>
+                ';
             }  
 
         ?>
@@ -86,7 +92,7 @@
                             <td><?= $row->tingkatan ?></td>
                             <td>
                                 <a href="edit_data.php?page=edit_data&id=<?= $row->id_dosen ?>" class="btn btn-warning"">Ubah</a>
-                                <a href="#" class="btn btn-danger">Hapus</a>
+                                <a href="../process/data_process.php?id=<?= $row->id_dosen ?>" class="btn btn-danger"  onclick="return confirm('Apakah yakin ingin menghapus data ini?');">Hapus</a>
                             </td>
                         </tr>
 
