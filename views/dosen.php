@@ -19,6 +19,8 @@
             require_once "read_data.php";
         } else if ( $_GET["home"] == "add_data" ) {
           require_once "add_data.php";
+        } else if ( $_GET["home"] == "edit_data" ) {
+          require_once "edit_data.php";
         }
     
     ?>

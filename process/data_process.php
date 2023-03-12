@@ -18,4 +18,19 @@ if ( isset($_POST['simpan_data']) ) {
     $data_dosen->add_data( $nip, $nama, $pengampu, $tingkatan );
 }
 
+if ( isset($_POST['ubah_data']) ) {
+
+    $data_dosen = new DosenController;
+
+    // simpan data ke dalam variabel masing masing
+    $id = trim($_POST['id_dosen']);
+    $nip = trim($_POST['nip']);
+    $nama = trim($_POST['nama']);
+    $pengampu = trim($_POST['pengampu']);
+    $tingkatan = trim($_POST['tingkatan']);
+
+    // passing setiap data yan dibutuhkan ke dalam method add_data
+    $data_dosen->save_edit_data( $id, $nip, $nama, $pengampu, $tingkatan );
+}
+
 ?>

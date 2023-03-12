@@ -35,7 +35,13 @@
                         <strong>Data Dosen Gagal Ditambahkan!</stromg>
                     </div>
                 ';
-            }   
+            } else if ( $_GET['alert'] == 3 ) {
+                echo '
+                    <div class="alert alert-primary" role="alert">
+                        <strong>Data Dosen Berhasil Dirubah!</stromg>
+                    </div>
+                ';
+            }  
 
         ?>
 
@@ -79,7 +85,7 @@
                             <td><?= $row->pengampu ?></td>
                             <td><?= $row->tingkatan ?></td>
                             <td>
-                                <a href="#" class="btn btn-warning"">Ubah</a>
+                                <a href="edit_data.php?page=edit_data&id=<?= $row->id_dosen ?>" class="btn btn-warning"">Ubah</a>
                                 <a href="#" class="btn btn-danger">Hapus</a>
                             </td>
                         </tr>
